@@ -28,7 +28,8 @@
       "Bash(gh repo create:*)",
       "Bash(snap install:*)",
       "Bash(sudo snap install:*)",
-      "Bash(gh:*)"
+      "Bash(gh:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
