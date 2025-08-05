@@ -27,7 +27,8 @@
       "WebFetch(domain:expo.dev)",
       "Bash(gh repo create:*)",
       "Bash(snap install:*)",
-      "Bash(sudo snap install:*)"
+      "Bash(sudo snap install:*)",
+      "Bash(gh:*)"
     ],
     "deny": []
   }
