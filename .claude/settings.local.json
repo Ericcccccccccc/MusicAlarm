@@ -24,7 +24,8 @@
       "mcp__Ref__ref_search_documentation",
       "mcp__Ref__ref_read_url",
       "WebFetch(domain:docs.expo.dev)",
-      "WebFetch(domain:expo.dev)"
+      "WebFetch(domain:expo.dev)",
+      "Bash(gh repo create:*)"
     ],
     "deny": []
   }
