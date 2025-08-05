@@ -238,13 +238,14 @@ For App Store deployment (requires paid Apple Developer account):
 
 ## Dependencies
 
-- React Native 0.72.6
-- Expo SDK 49
-- React Native Paper 5.10.6
+- React Native 0.79.5
+- Expo SDK 53
+- React Native Paper 5.12.5
 - Expo Notifications
 - Expo Auth Session
 - AsyncStorage
 - React Navigation 6
+- TypeScript 5.3.3
 
 ## License
 

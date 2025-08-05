@@ -25,7 +25,9 @@
       "mcp__Ref__ref_read_url",
       "WebFetch(domain:docs.expo.dev)",
       "WebFetch(domain:expo.dev)",
-      "Bash(gh repo create:*)"
+      "Bash(gh repo create:*)",
+      "Bash(snap install:*)",
+      "Bash(sudo snap install:*)"
     ],
     "deny": []
   }
