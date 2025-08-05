@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ScrollView, Alert } from 'react-native';
-import { Text, Card, Button, List, Switch } from 'react-native-paper';
+import { Text, Card, Button, List, Switch, Banner } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Constants from 'expo-constants';
 import { useApp } from '../contexts/AppContext';
+import { notificationService } from '../services/NotificationService';
 
 export default function SettingsScreen() {
   const { state, actions } = useApp();
+  const [isExpoGo, setIsExpoGo] = useState(false);
+  const [showExpoGoBanner, setShowExpoGoBanner] = useState(true);
+
+  useEffect(() => {
+    const checkExpoGo = Constants.executionEnvironment !== 'standalone';
+    setIsExpoGo(checkExpoGo);
+  }, []);
 
   const handleSpotifyConnect = async () => {
     if (state.isSpotifyConnected) {
@@ -41,6 +50,15 @@ export default function SettingsScreen() {
     }
   };
 
+  const handleTestNotification = async () => {
+    try {
+      await notificationService.scheduleTestNotification();
+      Alert.alert('Test Scheduled', 'A test notification will appear in 5 seconds. Keep the app open and watch the console for debug info.');
+    } catch (error) {
+      Alert.alert('Error', 'Failed to schedule test notification.');
+    }
+  };
+
   const handleClearAllData = () => {
     Alert.alert(
       'Clear All Data',
@@ -71,6 +89,25 @@ export default function SettingsScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+        {/* Expo Go Warning Banner */}
+        {isExpoGo && showExpoGoBanner && (
+          <Banner
+            visible={true}
+            actions={[
+              {
+                label: 'Dismiss',
+                onPress: () => setShowExpoGoBanner(false),
+              },
+            ]}
+            icon="alert-circle"
+            style={styles.banner}
+          >
+            <Text variant="bodyMedium">
+              You're using Expo Go. Notifications have limitations and may not work as expected. 
+              For full functionality, consider using a development build.
+            </Text>
+          </Banner>
+        )}
         {/* Spotify Settings */}
         <Card style={styles.card}>
           <Card.Content>
@@ -133,6 +170,17 @@ export default function SettingsScreen() {
               ℹ️ Notification permissions are required for alarms to work.
               If disabled, please enable notifications in your device settings.
             </Text>
+
+            {isExpoGo && (
+              <Button
+                mode="outlined"
+                onPress={handleTestNotification}
+                style={styles.testButton}
+                icon="test-tube"
+              >
+                Test Notification (5s)
+              </Button>
+            )}
           </Card.Content>
         </Card>
 
@@ -282,5 +330,14 @@ const styles = StyleSheet.create({
   dangerNote: {
     color: '#d32f2f',
     opacity: 0.8,
+  },
+  banner: {
+    marginBottom: 16,
+    backgroundColor: '#fff3cd',
+    borderColor: '#ffeaa7',
+    borderWidth: 1,
+  },
+  testButton: {
+    marginTop: 12,
   },
 });

@@ -18,7 +18,10 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.musicalarm.app",
       "infoPlist": {
-        "UIBackgroundModes": ["audio", "background-processing"],
+        "UIBackgroundModes": [
+          "audio",
+          "background-processing"
+        ],
         "NSMicrophoneUsageDescription": "This app does not use the microphone."
       }
     },
@@ -38,9 +41,12 @@
         {
           "icon": "./assets/notification-icon.png",
           "color": "#ffffff",
-          "sounds": ["./assets/sounds/alarm.wav"]
+          "sounds": [
+            "./assets/sounds/alarm.wav"
+          ]
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "scheme": "music-alarm"
   }

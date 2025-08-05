@@ -55,12 +55,21 @@ export default function SpotifyTrackSelector({
   };
 
   const handleSearch = async () => {
-    if (!searchQuery.trim() || !state.isSpotifyConnected) return;
+    if (!searchQuery.trim() || !state.isSpotifyConnected) {
+      console.log('Search blocked:', { query: searchQuery.trim(), connected: state.isSpotifyConnected });
+      return;
+    }
 
     try {
       setLoading(true);
       setError(null);
+      console.log('Starting search for:', searchQuery.trim());
+      console.log('Spotify authenticated:', spotifyService.isAuthenticated());
+      
       const results = await spotifyService.searchTracks(searchQuery.trim());
+      console.log('Search results:', results.length, 'tracks found');
+      console.log('First result:', results[0]);
+      
       setTracks(results);
     } catch (error) {
       console.error('Search error:', error);
@@ -163,19 +172,19 @@ export default function SpotifyTrackSelector({
             style={styles.tracksList}
             showsVerticalScrollIndicator={false}
             ListEmptyComponent={
-              searchQuery ? (
+              searchQuery && tracks.length === 0 && !loading ? (
                 <View style={styles.emptyContainer}>
                   <Text variant="bodyMedium" style={styles.emptyText}>
                     No tracks found. Try a different search term.
                   </Text>
                 </View>
-              ) : (
+              ) : !searchQuery ? (
                 <View style={styles.emptyContainer}>
                   <Text variant="bodyMedium" style={styles.emptyText}>
                     Search for songs, artists, or albums
                   </Text>
                 </View>
-              )
+              ) : null
             }
           />
         )}
@@ -209,13 +218,16 @@ export default function SpotifyTrackSelector({
 
 const styles = StyleSheet.create({
   modal: {
-    flex: 1,
+    backgroundColor: 'white',
     margin: 20,
     borderRadius: 8,
+    maxHeight: '90%',
+    minHeight: '80%',
   },
   container: {
     flex: 1,
     borderRadius: 8,
+    backgroundColor: 'white',
   },
   safeArea: {
     flex: 1,
