@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CFBundleVersionKey</key>
+	<string>1</string>
+	<key>NSManagedObjectModel_CurrentVersionName</key>
+	<string>MusicAlarm</string>
+	<key>NSManagedObjectModel_VersionHashes</key>
+	<dict>
+		<key>AlarmEntity</key>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwPFFUkbnVsbNMNDhAREhNWTlNLZXlzWk5TLm9iamVjdHNWJGNsYXNzojQFgASAA6IVFoAHgAiADFpBbGFybUVudGl0eaMXGBmACoAJgAuADlNpZFN0aW1lXxAQaXNFbmFibGVkRGVmYXVsdNIaGxxfEA9OU0VudGl0eURlc2NyaXB0aW9uoB1fEBBOU01hbmFnZWRPYmplY3TfEHkaHgosKC4kNDNEUVdcZW1uuL2/xMnSGiAAEdEhIlpOUy5zdHJpbmdzgBfTJSYnKClUJG51bGzTKissLi9aTlMuc3RyaW5nVk5TZGF0YYATgBSAFVt0aW1lU3RhbXBWgBaAGFN5ZXPRNJdVaXNFbmFibGVkgBnTJSY3ODlTcGlkgASAGl8QEWlzRW5hYmxlZERlZmF1bHSAH9InOzyAHoAhUzIwMF8QDk5TU3VwcG9ydEZpbGWAG11NSUQtfHNvbWUgaWQtPdMlJj9ABEVOcGVy6gACwGFbZXQEZGVmYdBTAU2FzQCM6M4QMQwHlB04P4fwJ\
+		</data>
+	</dict>
+	<key>NSManagedObjectModel_VersionHashesKey</key>
+	<string>1</string>
+</dict>
+</plist>

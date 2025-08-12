@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlarmEntity" representedClassName="AlarmEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isEnabled" optional="NO" attributeType="Boolean" defaultValue="YES" usesScalarValueType="YES"/>
+        <attribute name="label" optional="NO" attributeType="String" defaultValue="Alarm"/>
+        <attribute name="repeatDays" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Set&lt;Weekday&gt;"/>
+        <attribute name="snoozeEnabled" optional="NO" attributeType="Boolean" defaultValue="YES" usesScalarValueType="YES"/>
+        <attribute name="soundVolume" optional="NO" attributeType="Float" defaultValue="0.8" usesScalarValueType="YES"/>
+        <attribute name="spotifySongId" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+</model>
