@@ -45,7 +45,7 @@ class AddEditAlarmViewModel: ObservableObject {
             let now = Date()
             let calendar = Calendar.current
             let nextHour = calendar.date(byAdding: .hour, value: 1, to: now) ?? now
-            let roundedTime = calendar.date(bySettingMinute: 0, second: 0, of: nextHour) ?? now
+            let roundedTime = calendar.date(bySettingHour: calendar.component(.hour, from: nextHour), minute: 0, second: 0, of: nextHour) ?? now
             
             self.time = roundedTime
             self.isEnabled = true

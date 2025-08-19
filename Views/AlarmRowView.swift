@@ -6,7 +6,7 @@ struct AlarmRowView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .baseline) {
+                HStack(alignment: .firstTextBaseline) {
                     Text(timeString)
                         .font(.largeTitle)
                         .fontWeight(.thin)
@@ -80,11 +80,11 @@ struct AlarmRowView: View {
     
     private func mockSongForId(_ id: String) -> SpotifySong? {
         let mockSongs = [
-            SpotifySong(id: "1", title: "Wake Me Up", artist: "Avicii", album: "True"),
-            SpotifySong(id: "2", title: "Good Morning", artist: "John Legend", album: "Wake Up!"),
-            SpotifySong(id: "3", title: "Eye of the Tiger", artist: "Survivor", album: "Eye of the Tiger"),
-            SpotifySong(id: "4", title: "Here Comes the Sun", artist: "The Beatles", album: "Abbey Road"),
-            SpotifySong(id: "5", title: "Walking on Sunshine", artist: "Katrina and the Waves", album: "Walking on Sunshine")
+            SpotifySong(id: "1", title: "Wake Me Up", artist: "Avicii", albumArt: nil, uri: "spotify:track:4uLU6hMCjMI75M1A2tKUQC", previewURL: nil, durationMs: 243000),
+            SpotifySong(id: "2", title: "Good Morning", artist: "John Legend", albumArt: nil, uri: "spotify:track:2Fxmhks0bxGSBdJ92vM42m", previewURL: nil, durationMs: 217000),
+            SpotifySong(id: "3", title: "Eye of the Tiger", artist: "Survivor", albumArt: nil, uri: "spotify:track:2takcwOaAZWiXQijPHIx7B", previewURL: nil, durationMs: 245000),
+            SpotifySong(id: "4", title: "Here Comes the Sun", artist: "The Beatles", albumArt: nil, uri: "spotify:track:6dGnYIeXmHdcikdzNNDMm2", previewURL: nil, durationMs: 185000),
+            SpotifySong(id: "5", title: "Walking on Sunshine", artist: "Katrina and the Waves", albumArt: nil, uri: "spotify:track:05wIrZSwuaVWhcv5FfqeH0", previewURL: nil, durationMs: 236000)
         ]
         
         return mockSongs.first { $0.id == id }

@@ -103,7 +103,7 @@ struct AddEditAlarmView: View {
                     .font(.subheadline)
                     .foregroundColor(.textSecondary)
                 
-                Text(song.album)
+                Text("Track")
                     .font(.caption)
                     .foregroundColor(.textTertiary)
             }

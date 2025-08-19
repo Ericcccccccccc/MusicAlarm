@@ -194,7 +194,7 @@ struct SongRowView: View {
                 .foregroundColor(.textSecondary)
                 .lineLimit(1)
             
-            Text(song.album)
+            Text("Track")
                 .font(.caption)
                 .foregroundColor(.textTertiary)
                 .lineLimit(1)

@@ -8,7 +8,9 @@ class AudioManager: NSObject {
     private var audioPlayer: AVAudioPlayer?
     private var fadeTimer: Timer?
     private var currentVolume: Float = 0.8
-    private let spotifyManager = SpotifyManager.shared
+    private var spotifyManager: SpotifyManager {
+        SpotifyManager.shared
+    }
     
     override init() {
         super.init()
@@ -82,7 +84,7 @@ class AudioManager: NSObject {
         Task {
             do {
                 // Check if Spotify is authenticated
-                if spotifyManager.isAuthenticated {
+                if await spotifyManager.isAuthenticated {
                     // Attempt to play the track through Spotify API
                     // For now, we'll open the Spotify app with the track URI
                     if let url = URL(string: uri) {
